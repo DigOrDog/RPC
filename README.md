@@ -26,14 +26,12 @@
 RPC框架的目标就是要2~9这些步骤都封装起来，让用户对这些细节透明。
 ***
 ### RPC框架代码实现（模仿篇）
-#### example-server
-
-#### example-client
+#### ToDo(zookeeper引入)
 
 
 ***
 ### 学习过程
-（1）[maven项目中，多模块之间如何相互引用](https://blog.csdn.net/weixin_52145067/article/details/125284126)
+（1）[maven项目中，多模块之间如何相互引用](https://blog.csdn.net/weixin_52145067/article/details/125284126)  
 （2）Java 并发学习
 > [一文秒懂 Java ExecutorService](https://www.twle.cn/c/yufei/javatm/javatm-basic-executorservice.html)
 >> - 需求场景？
@@ -43,6 +41,7 @@ RPC框架的目标就是要2~9这些步骤都封装起来，让用户对这些�
 >> - 怎么用？
 >>> - 实例化
 >>>> ThreadPoolExecutor类实现了ExecutorService 接口并提供了一些构造函数用于配置执行程序服务及其内部池。  
+>>>>
 >>>>```java
 >>>> // 线程池参数
 >>>> int corePoolSize = 10; // 线程池中的核心线程数为10，即最少保持的线程数。
@@ -57,5 +56,18 @@ RPC框架的目标就是要2~9这些步骤都封装起来，让用户对这些�
 >>>>        TimeUnit.MINUTES, // 单位
 >>>>        workQueue, // 线程池中的任务队列为ArrayBlockingQueue，容量为100，即允许存放100个任务。
 >>>>        threadFactory); // 使用默认的线程工厂Executors.defaultThreadFactory()。
-```
->>> - 实例化
+>>>> ```
+（3）ZooKeeper 学习使用
+> 是什么？
+>> ZooKeeper is a centralized service for ***maintaining configuration information***, naming, providing distributed synchronization, and providing group services. All of these kinds of services are used in some form or another by distributed applications. Each time they are implemented there is a lot of work that goes into fixing the bugs and race conditions that are inevitable. ***Because of the difficulty of implementing these kinds of services, applications initially usually skimp on them***, which make them brittle in the presence of change and difficult to manage. Even when done correctly, different implementations of these services lead to management complexity when the applications are deployed.  
+>>
+> 怎么使用？
+>> (1) 三种端口号：三个ZooKeeper配置需要的端口号 
+>> - 端口X：客户端连接ZooKeeper集群使用的监听端口号
+>> - 端口Y：leader和follower之间数据同步使用的端口号
+>> - 端口Z：leader选举专用的端口号  
+>> 设置过程如下：[参考文章](https://juejin.cn/s/zookeeper%E9%85%8D%E7%BD%AEip)   
+>> 不过目前对端口X的修改的尝试不成功，当前只使用默认的客户端监听端口 2181，后期有时间再研究这个问题  
+>>
+>> (2)[查询zookeeper注册中心的注册服务](https://cloud.tencent.com/developer/article/1017357)
+>

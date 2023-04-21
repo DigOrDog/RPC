@@ -13,6 +13,7 @@
         <module>example-client</module>
         <module>services</module>
         <module>framework-component</module>
+        <module>demo</module>
     </modules>
 
     <properties>
