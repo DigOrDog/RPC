@@ -1,17 +1,25 @@
 package org.example;
 
+import org.example.config.client.RpcRequest;
+import org.example.config.client.RpcResponse;
+import org.example.consumer.RpcClientProxy;
+import org.example.consumer.impl.RpcServiceDiscovery;
 import org.example.hello.HelloService;
 import org.example.hello.Message;
 
 public class ClientInstance {
     public static void main(String[] args) {
-        RpcClientProxy rpcClientProxy = new RpcClientProxy("127.0.0.1", 888);
-        HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
-        String msg = helloService.sayHello(new Message("胡成"));
-        System.out.println(msg);
-        System.out.println(helloService.sayHello(new Message("牛逼")));
-        for (int x = 0; x <= 1000; ++x) {
-            System.out.println(helloService.sayHello(new Message(String.valueOf(x))));
+        RpcServiceDiscovery rpcServiceDiscovery = new RpcServiceDiscovery();
+        RpcRequest rpcRequest = new RpcRequest(HelloService.class.getName(), "02", "01");
+        RpcResponse rpcResponse = rpcServiceDiscovery.findService(rpcRequest);
+        RpcClientProxy rpcClientProxy = null;
+        if (rpcResponse.getCode() == 1) {
+            rpcClientProxy = new RpcClientProxy(rpcResponse.getHost(), rpcResponse.getPort());
+            HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
+            String msg = helloService.sayHello(new Message("胡成"));
+            System.out.println(msg);
+        } else {
+            // 请求失败
         }
     }
 }

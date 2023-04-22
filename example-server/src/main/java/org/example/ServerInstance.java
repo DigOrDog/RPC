@@ -1,7 +1,8 @@
 package org.example;
 
-import org.example.config.RpcServiceConfig;
+import org.example.config.server.RpcServiceConfig;
 import org.example.hello.HelloService;
+import org.example.provider.RPCServer;
 import org.example.servicesImpl.services.hello.HelloServiceImpl;
 import org.example.servicesImpl.services.hello.HelloServiceImplV2;
 

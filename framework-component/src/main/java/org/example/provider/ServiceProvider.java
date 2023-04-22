@@ -1,6 +1,6 @@
 package org.example.provider;
 
-import org.example.config.RpcServiceConfig;
+import org.example.config.server.RpcServiceConfig;
 
 import java.net.InetAddress;
 

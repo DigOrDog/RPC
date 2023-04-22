@@ -1,6 +1,9 @@
-package org.example.config;
+package org.example.config.server;
 
 public class RpcServiceConfig {
+    /**
+     * 用于服务器端注册服务
+     * */
     private String group;
     private String version;
     private Object service;

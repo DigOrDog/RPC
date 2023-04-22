@@ -1,5 +1,7 @@
-package org.example;
+package org.example.provider;
 
+
+import org.example.config.client.RpcRequest;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

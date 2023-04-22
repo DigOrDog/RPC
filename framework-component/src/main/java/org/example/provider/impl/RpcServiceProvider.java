@@ -1,18 +1,17 @@
 package org.example.provider.impl;
 
 import org.apache.curator.framework.CuratorFramework;
-import org.example.config.RpcServiceConfig;
+import org.example.config.server.RpcServiceConfig;
 import org.example.provider.ServiceProvider;
 import org.example.zookeeper.CuratorUtils;
 
 import java.net.InetAddress;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 public class RpcServiceProvider implements ServiceProvider {
     /**
-     * key表示服务名+Group+Version
+     * key表示服务名+Group+Version(this.getServiceName() + "/" + this.getGroup() + "/" + this.getVersion();)
      * value表示服务名所对应的对象
      * */
     private Map<String, Object> serviceMap;
@@ -34,8 +33,6 @@ public class RpcServiceProvider implements ServiceProvider {
             serviceMap.put(rpcServiceName, rpcServiceConfig.getService());
             System.out.println(rpcServiceName + "服务正在发布...");
             try {
-                String hostAddress = inetAddress.getHostAddress();
-
                 String servicePath = CuratorUtils.ZK_REGISTER_ROOT_PATH + "/" + rpcServiceName +
                         "/" + inetAddress.getHostAddress() + ":" + port;
                 CuratorFramework zkClient = CuratorUtils.getZkClient();

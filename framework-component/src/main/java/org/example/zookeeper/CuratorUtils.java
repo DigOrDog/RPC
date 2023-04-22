@@ -54,7 +54,7 @@ public final class CuratorUtils {
     /**
      * Gets the children under a node
      *
-     * @param rpcServiceName rpc service name eg:github.javaguide.HelloServicetest2version1
+     * @param rpcServiceName rpc service name eg:/hucheng-rpc/org.example.hello.HelloService/01/01
      * @return All child nodes under the specified node
      */
     public static List<String> getChildrenNodes(CuratorFramework zkClient, String rpcServiceName) {

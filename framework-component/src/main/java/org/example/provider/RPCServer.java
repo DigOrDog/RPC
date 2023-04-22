@@ -1,12 +1,11 @@
-package org.example;
+package org.example.provider;
 
-import org.example.config.RpcServiceConfig;
+import org.example.config.server.RpcServiceConfig;
 import org.example.provider.impl.RpcServiceProvider;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.concurrent.*;
 
 public class RPCServer {

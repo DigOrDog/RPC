@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6038356e-1c30-4545-afb9-7eb1af8b0b9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/config/client/RpcRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-client/src/main/java/org/example/ClientInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-client/src/main/java/org/example/ClientInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-server/src/main/java/org/example/ServerInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-server/src/main/java/org/example/ServerInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-component/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/RPCServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/RPCServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/RPCServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/provider/RPCServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/RpcClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/consumer/RpcClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/RpcRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/provider/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/config/RpcServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/config/server/RpcServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/provider/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/provider/ServiceProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/provider/impl/RpcServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/provider/impl/RpcServiceProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-component/src/main/java/org/example/zookeeper/CuratorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-component/src/main/java/org/example/zookeeper/CuratorUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +79,13 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServerInstance">
+  <component name="RunManager" selected="Application.ClientInstance">
     <configuration name="ClientInstance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ClientInstance" />
       <module name="example-client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.config.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,7 +98,7 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.config.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,7 +111,7 @@
       <module name="example-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.config.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +124,7 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.config.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,9 +134,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientInstance" />
         <item itemvalue="Application.ServerInstance" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ClientInstance" />
         <item itemvalue="Application.ZooKeeperExample" />
       </list>
     </recent_temporary>
@@ -150,11 +151,24 @@
       <updated>1681960240530</updated>
       <workItem from="1681960241677" duration="9718000" />
       <workItem from="1681989453291" duration="7916000" />
-      <workItem from="1682065461667" duration="12211000" />
+      <workItem from="1682065461667" duration="12613000" />
+      <workItem from="1682083836789" duration="973000" />
+      <workItem from="1682144104939" duration="6607000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/example-client/src/main/java/org/example/ClientInstance.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

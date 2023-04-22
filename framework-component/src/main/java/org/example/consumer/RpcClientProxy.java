@@ -1,4 +1,8 @@
-package org.example;
+package org.example.consumer;
+
+import org.example.config.client.RpcRequest;
+import org.example.config.client.RpcResponse;
+import org.example.consumer.impl.RpcServiceDiscovery;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -23,7 +27,7 @@ public class RpcClientProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        RpcRequest rpcRequest = new RpcRequest(method.getDeclaringClass().getName(),
+        RpcRequest rpcRequest = new RpcRequest(
                 method.getName(),
                 args,
                 method.getParameterTypes());
