@@ -38,7 +38,7 @@ public class RpcServiceProvider implements ServiceProvider {
                 CuratorFramework zkClient = CuratorUtils.getZkClient();
                 CuratorUtils.createPersistentNode(zkClient, servicePath);
             } catch (Exception e) {
-
+                System.out.println("无法连接到zookeeper上...服务发布失败");
             }
 
 

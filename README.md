@@ -25,8 +25,14 @@
 10)、服务消费方（RPC Client）得到最终的服务调用结果。  
 RPC框架的目标就是要2~9这些步骤都封装起来，让用户对这些细节透明。
 ***
-### RPC框架代码实现（模仿篇）
-#### ToDo(zookeeper引入)
+### RPC框架代码实现
+#### 模块组成
+1、services模块
+> 该模块用于定义服务接口，例如hello服务、math服务。  
+> 所有服务接口必须继承Servie接口
+> ![继承图](resources/structure.png)
+> 
+2、framework-component模块
 
 
 ***
